@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TNIC — Preparação para a prova de cidadania portuguesa</title>
+  <meta name="description" content="Prepare-se para a nova prova de conhecimentos cívicos para a cidadania portuguesa. 800 perguntas, 5 temas, simulações de exame. €49.">
+  <link rel="canonical" href="https://tnic.pt/">
+  <meta property="og:title" content="TNIC — Preparação para a prova de cidadania portuguesa">
+  <meta property="og:description" content="Prepare-se para a nova prova de conhecimentos cívicos para a cidadania portuguesa. 800 perguntas, 5 temas, simulações de exame. €49.">
+  <meta property="og:url" content="https://tnic.pt/">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Lexend',sans-serif;background:#faf9fc;color:#1a1a1a;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+
+    /* Header */
+    .header{max-width:1080px;margin:0 auto;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+    .header-left{display:flex;align-items:center;gap:1.2rem}
+    .header-logo{font-size:1.3rem;font-weight:800;text-decoration:none}.header-logo span{color:#7c3aed}
+    .lang-switcher{display:flex;gap:0.3rem}
+    .lang-link{font-size:0.75rem;font-weight:700;padding:0.25rem 0.55rem;border-radius:999px;text-decoration:none;background:#f0edf8;color:#5b21b6;transition:all .15s}
+    .lang-link.active{background:#7c3aed;color:#fff}
+    .lang-link:hover:not(.active){background:#ebe5ff}
+    .header-cta{background:#7c3aed;color:#fff;padding:0.55rem 1.2rem;border-radius:999px;font-size:0.88rem;font-weight:600;text-decoration:none;transition:background .2s}
+    .header-cta:hover{background:#5b21b6}
+
+    /* Hero */
+    .hero{text-align:center;padding:3.5rem 1.5rem 2.5rem;max-width:760px;margin:0 auto}
+    .hero-badge{display:inline-block;background:#f0edf8;color:#5b21b6;font-size:0.8rem;font-weight:700;padding:0.35rem 1rem;border-radius:999px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:1.2rem}
+    .hero h1{font-size:2.4rem;font-weight:800;line-height:1.15;margin-bottom:0.8rem}
+    .hero h1 .accent{color:#7c3aed}
+    .hero .sub{font-size:1.05rem;color:#555;line-height:1.7;margin-bottom:2rem;max-width:620px;margin-left:auto;margin-right:auto}
+    .hero-actions{display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap}
+    .btn-p{background:#7c3aed;color:#fff;padding:0.85rem 2rem;border-radius:999px;font-weight:700;font-size:1rem;text-decoration:none;transition:background .2s}.btn-p:hover{background:#5b21b6}
+    .btn-s{background:#fff;color:#7c3aed;border:2px solid #e0d5f5;padding:0.85rem 2rem;border-radius:999px;font-weight:700;font-size:1rem;text-decoration:none;transition:all .2s}.btn-s:hover{background:#f5f0ff;border-color:#c4b5fd}
+    @media(max-width:500px){.hero h1{font-size:1.7rem}.hero-actions{flex-direction:column;align-items:center}}
+
+    /* Sections */
+    .section{max-width:760px;margin:0 auto;padding:0 1.5rem 2.5rem}
+    .card{background:#fff;border-radius:1.2rem;padding:2rem 2.2rem;box-shadow:0 4px 18px rgba(0,0,0,.05);margin-bottom:1.5rem}
+    @media(max-width:600px){.card{padding:1.4rem 1.2rem}}
+    .card .kicker{font-size:.82rem;font-weight:700;color:#7c3aed;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem}
+    .card h2{font-size:1.3rem;font-weight:700;margin-bottom:1rem}
+    .card p{font-size:.97rem;color:#444;line-height:1.75;margin-bottom:.8rem}
+    .card ul{padding-left:1.4rem;margin:.5rem 0 1rem}.card li{font-size:.97rem;color:#444;line-height:1.7;margin-bottom:.35rem}
+
+    /* Inline test */
+    .inline-test-inner{max-width:760px;margin:0 auto;padding:0 1.5rem 2rem}
+    .inline-test-heading{text-align:center;font-size:1.4rem;font-weight:700;margin-bottom:.3rem}
+    .inline-test-lead{text-align:center;font-size:.95rem;color:#666;margin-bottom:1.5rem}
+    #inline-test-questions{}
+    .inline-question-card{background:#fff;border-radius:1rem;padding:1.5rem 1.6rem;box-shadow:0 4px 14px rgba(0,0,0,.06);margin-bottom:1rem}
+    .inline-question-card h3{font-size:1rem;font-weight:600;color:#1a1a1a;margin-bottom:1rem;line-height:1.5}
+    .inline-option-btn{display:block;width:100%;text-align:left;background:#faf9fc;border:2px solid #e8e0f5;border-radius:.7rem;padding:.75rem 1rem;font-family:inherit;font-size:.95rem;font-weight:500;color:#333;cursor:pointer;margin-bottom:.5rem;transition:border-color .15s,background .15s}
+    .inline-option-btn:hover:not(:disabled){border-color:#c4b5fd;background:#f5f0ff}
+    .inline-option-btn:disabled{cursor:default}
+    .inline-feedback{font-size:.9rem;font-weight:600;padding:.5rem 0}.inline-correct{color:#166534}.inline-wrong{color:#991b1b}
+    .inline-progressbar-wrapper{background:#eee;border-radius:999px;height:6px;margin-top:1rem;overflow:hidden}
+    .inline-progressbar{height:100%;width:0%;background:linear-gradient(to right,#006600 0%,#006600 38%,#FF0000 38%,#FF0000 100%);border-radius:999px;transition:width .35s}
+    .inline-progress-text{font-size:.82rem;color:#888;margin-top:.4rem;text-align:center}
+    .end-card{text-align:center}.end-card h3{margin-bottom:.8rem}
+    .donut-wrapper{position:relative;display:inline-block;margin:1rem 0}.donut-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1.4rem;font-weight:800;color:#1a1a1a}
+
+    /* Pricing */
+    .pricing{text-align:center;max-width:540px;margin:0 auto;padding:0 1.5rem 3rem}
+    .pricing .kicker{font-size:.82rem;font-weight:700;color:#7c3aed;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem}
+    .pricing h2{font-size:1.3rem;font-weight:700;margin-bottom:1.5rem}
+    .pricing-toggle{display:flex;justify-content:center;gap:.5rem;margin-bottom:1.5rem}
+    .toggle-btn{padding:.55rem 1.4rem;border-radius:999px;font-family:inherit;font-size:.9rem;font-weight:600;border:2px solid #e0d5f5;background:#fff;color:#5b21b6;cursor:pointer;transition:all .2s}
+    .toggle-btn.active{background:#7c3aed;color:#fff;border-color:#7c3aed}
+    .toggle-btn:hover:not(.active){background:#f5f0ff}
+    .bundle-badge{display:inline-block;background:#dcfce7;color:#166534;font-size:.72rem;font-weight:700;padding:.12rem .5rem;border-radius:999px;margin-left:.3rem;vertical-align:middle}
+    .price-card{background:#fff;border-radius:1.4rem;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.07)}
+    .price-top{background:linear-gradient(135deg,#efe8ff,#dcc9ff);padding:1.5rem 1rem 2rem}
+    .price-amount{font-size:2.4rem;font-weight:700;padding:1.2rem 0 0}
+    .price-sub{font-size:.95rem;color:#555;margin-top:.2rem}
+    .price-features{list-style:none;text-align:left;padding:1.2rem 2rem 0;margin:0}
+    .price-features li{position:relative;padding-left:1.3rem;font-size:.93rem;font-weight:500;color:#333;line-height:1.45;margin-bottom:.6rem}
+    .price-features li::before{content:"✓";position:absolute;left:0;color:#7c3aed;font-weight:700}
+    .price-features .bundle-extra{display:none;color:#166534;font-weight:600}
+    .price-features .bundle-extra.visible{display:list-item}
+    .price-cta{display:block;width:100%;background:#7c3aed;color:#fff;padding:1.1rem;text-decoration:none;font-size:1rem;font-weight:600;margin-top:1.5rem;transition:background .2s;border-radius:0}
+    .price-cta:hover{background:#5b21b6}
+    .pricing-foot{font-size:.88rem;color:#888;margin-top:1rem}
+
+    /* Footer */
+    .footer{text-align:center;padding:2rem 1.5rem;font-size:.82rem;color:#999}
+    .footer a{color:#7c3aed;text-decoration:none}.footer a:hover{text-decoration:underline}
+    .footer-links{margin-top:.5rem;display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap}
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="header-logo"><span>TNIC</span>.pt</a>
+    <div class="lang-switcher"><a href="/" class="lang-link active">PT</a> <a href="/en/" class="lang-link">EN</a> <a href="/uk/" class="lang-link">UA</a> <a href="/ru/" class="lang-link">RU</a></div>
+  </div>
+  <a href="https://civiclearn.com/portugal/checkout" class="header-cta">Ativar acesso</a>
+</header>
+
+<section class="hero">
+  <div class="hero-badge">Nova prova de cidadania · Portugal 2026</div>
+  <h1>Prepare-se para a <span class="accent">prova de cidadania portuguesa</span></h1>
+  <p class="sub">A nova Lei da Nacionalidade exige que os candidatos à cidadania demonstrem conhecimentos sobre a história, cultura, organização política e direitos de Portugal. Comece já com 800 perguntas baseadas na legislação aprovada.</p>
+  <div class="hero-actions">
+    <a href="https://civiclearn.com/portugal/checkout" class="btn-p">Acesso completo — €49</a>
+    <a href="#test" class="btn-s">Teste grátis abaixo ↓</a>
+  </div>
+</section>
+
+<div class="section">
+  <div class="card">
+    <div class="kicker">O que mudou</div>
+    <h2>Nova Lei da Nacionalidade — abril 2026</h2>
+    <p>A Assembleia da República aprovou a 1 de abril de 2026 a revisão da Lei da Nacionalidade, introduzindo pela primeira vez a obrigatoriedade de uma prova de conhecimentos cívicos para a naturalização.</p>
+    <ul>
+      <li>Residência legal de 7 anos (CPLP/UE) ou 10 anos (outros)</li>
+      <li>Prova de conhecimento da cultura, história e símbolos nacionais</li>
+      <li>Prova de conhecimento dos direitos, deveres e organização política</li>
+      <li>Declaração solene de adesão aos princípios democráticos</li>
+      <li>Cidadãos lusófonos: dispensados da prova de língua, mas não da prova cívica</li>
+    </ul>
+    <p>A portaria que regulamenta o formato da prova será publicada após promulgação — mas os temas já são conhecidos e estão definidos na lei.</p>
+  </div>
+</div>
+
+<div id="test">
+  <div class="inline-test-inner">
+    <h2 class="inline-test-heading">Teste os seus conhecimentos</h2>
+    <p class="inline-test-lead">Dez perguntas rápidas sobre Portugal — quanto sabe?</p>
+    <div id="inline-test-questions"></div>
+    <div class="inline-progressbar-wrapper"><div class="inline-progressbar" id="inline-progressbar"></div></div>
+    <p id="inline-progress-text" class="inline-progress-text"></p>
+  </div>
+</div>
+
+<div class="pricing">
+  <div class="kicker">Preços</div>
+  <h2>Pagamento único — acesso vitalício</h2>
+  <div class="pricing-toggle">
+    <button class="toggle-btn active" data-plan="solo">Conhecimentos Cívicos</button>
+    <button class="toggle-btn" data-plan="bundle">Cidadania + CIPLE <span class="bundle-badge">Poupe €19</span></button>
+  </div>
+  <div class="price-card">
+    <div class="price-top"><span id="pTag">Conhecimentos Cívicos</span></div>
+    <div class="price-amount" id="pAmt">€49</div>
+    <div class="price-sub">Pagamento único. Sem subscrições. Acesso vitalício.</div>
+    <ul class="price-features">
+      <li>800 perguntas em 5 temas (PT/EN)</li>
+      <li>Simulações de exame com tempo</li>
+      <li>Explicações para cada pergunta</li>
+      <li>Flashcards e estudo por tema</li>
+      <li>Progresso em tempo real</li>
+      <li>Acesso em qualquer dispositivo</li>
+      <li class="bundle-extra">+ CIPLE: simulações de português</li>
+      <li class="bundle-extra">+ Compreensão e produção oral e escrita</li>
+      <li class="bundle-extra">+ Avaliação IA com feedback</li>
+    </ul>
+    <a class="price-cta" href="https://civiclearn.com/portugal/checkout" id="pCta">Começar agora — €49</a>
+  </div>
+  <p class="pricing-foot">Pagamento único. Sem subscrições. Acesso vitalício.</p>
+</div>
+
+<footer class="footer">
+  <div>© 2026 TNIC.pt — membro da rede CivicLearn.</div>
+  <div class="footer-links"><a href="https://provacidadania.pt">Provacidadania.pt</a> <a href="https://cipleonline.pt">CIPLEonline.pt</a> <a href="https://provacidadania.pt/contacto/">Contacto</a></div>
+</footer>
+
+<script>
+(function(){
+var QUESTIONS=[{q:"Em que ano foi fundado o Reino de Portugal?",a:["1143", "1179", "1096"]},{q:"Qual é o hino nacional português?",a:["A Portuguesa", "Hino da Carta", "A Marselhesa"]},{q:"Que revolução restaurou a democracia em 1974?",a:["Revolução dos Cravos", "Revolução de 1910", "Revolução de 1640"]},{q:"Qual é o órgão legislativo de Portugal?",a:["Assembleia da República", "Conselho de Estado", "Tribunal Constitucional"]},{q:"Qual documento garante os direitos fundamentais?",a:["Constituição da República", "Código Civil", "Carta Europeia"]},{q:"De quantos em quantos anos há eleições legislativas?",a:["4 anos", "5 anos", "3 anos"]},{q:"Que tratado reconheceu a independência em 1143?",a:["Tratado de Zamora", "Tratado de Windsor", "Tratado de Tordesilhas"]},{q:"Qual é o sistema de saúde público?",a:["SNS", "SUS", "Segurança Social"]},{q:"Em que ano Portugal aderiu à UE?",a:["1986", "1995", "2004"]},{q:"O que representa a esfera armilar na bandeira?",a:["Os Descobrimentos", "A monarquia", "A República"]}];
+var CORRECT="Correto!",WRONG="Resposta correta:",PROG="Progresso";
+var R_GREAT="Excelente!",R_GOOD="Bom resultado!",R_START="Bom começo!",R_KEEP="Continue a praticar!";
+var R_TEXT='Acabou de experimentar algumas perguntas de exemplo. Tenha acesso a <strong>800 perguntas em 5 temas com explicações detalhadas</strong>.',R_CTA="Acesso completo";
+
+function shuffle(q){var c=q.a.map(function(o,i){return{t:o,c:i===0}});for(var i=c.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var tmp=c[i];c[i]=c[j];c[j]=tmp}q.a=c.map(function(x){return x.t});q.correct=c.findIndex(function(x){return x.c})}
+QUESTIONS.forEach(function(q){q.correct=0;shuffle(q)});
+
+var container=document.getElementById("inline-test-questions");
+var total=QUESTIONS.length,score=0,answered=0,currentRow=0;
+var ROWS=[];for(var i=0;i<total;i+=3)ROWS.push(QUESTIONS.slice(i,i+3));
+var rowCounts=new Array(ROWS.length).fill(0);
+
+function updateProg(){var el=document.getElementById("inline-progress-text");if(el)el.textContent=PROG+": "+answered+" / "+total;var bar=document.getElementById("inline-progressbar");if(bar)bar.style.width=((answered/total)*100)+"%"}
+
+function donut(pct){var C=2*Math.PI*40;return'<div class="donut-wrapper"><svg width="120" height="120" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="#d4edda" stroke-width="12" fill="none"></circle><circle cx="50" cy="50" r="40" stroke="#006600" stroke-width="12" fill="none" stroke-dasharray="'+((pct/100)*C)+' '+((1-pct/100)*C)+'" transform="rotate(-90 50 50)" stroke-linecap="round"></circle></svg><div class="donut-center">'+pct+'%</div></div>'}
+
+function endCard(){var pct=Math.round((score/total)*100);var t=pct>=80?R_GREAT:pct>=50?R_GOOD:pct>=25?R_START:R_KEEP;var d=document.createElement("div");d.className="inline-question-card end-card";d.innerHTML="<h3>"+t+"</h3>"+donut(pct)+"<p>"+R_TEXT+'</p><a href="https://civiclearn.com/portugal/checkout" class="btn-p" style="display:inline-block;margin-top:1rem">'+R_CTA+"</a>";return d}
+
+function renderRow(ri){if(!ROWS[ri])return;ROWS[ri].forEach(function(q,off){var ai=ri*3+off;container.appendChild(makeCard(q,ai,ri))})}
+
+function makeCard(q,ai,ri){var card=document.createElement("div");card.className="inline-question-card";var h=document.createElement("h3");h.textContent=q.q;card.appendChild(h);var fb=document.createElement("div");fb.className="inline-feedback";q.a.forEach(function(opt,i){var btn=document.createElement("button");btn.className="inline-option-btn";btn.textContent=opt;btn.onclick=function(){answered++;rowCounts[ri]++;updateProg();var btns=card.querySelectorAll("button");btns.forEach(function(b){b.disabled=true});if(i===q.correct){score++;btn.style.background="rgba(24,160,110,.15)";btn.style.borderColor="#18a06e";btn.style.color="#14805a";fb.textContent=CORRECT;fb.classList.add("inline-correct")}else{btn.style.background="rgba(230,57,70,.12)";btn.style.borderColor="#e63946";btn.style.color="#c5303b";btns[q.correct].style.background="rgba(24,160,110,.15)";btns[q.correct].style.borderColor="#18a06e";btns[q.correct].style.color="#14805a";fb.textContent=WRONG+" "+q.a[q.correct];fb.classList.add("inline-wrong")}card.appendChild(fb);if(ai===total-1){setTimeout(function(){container.appendChild(endCard())},300);return}if(rowCounts[ri]===ROWS[ri].length){currentRow++;setTimeout(function(){renderRow(currentRow)},150)}};card.appendChild(btn)});return card}
+
+renderRow(0);updateProg();
+})();
+</script>
+
+<script>
+(function(){
+  var btns=document.querySelectorAll(".toggle-btn");
+  var amt=document.getElementById("pAmt");
+  var tag=document.getElementById("pTag");
+  var cta=document.getElementById("pCta");
+  var extras=document.querySelectorAll(".price-features .bundle-extra");
+  btns.forEach(function(b){b.addEventListener("click",function(){
+    var plan=b.dataset.plan;
+    btns.forEach(function(x){x.classList.toggle("active",x.dataset.plan===plan)});
+    if(plan==="bundle"){amt.textContent="€79";tag.textContent="Cidadania + CIPLE";cta.textContent="Começar agora — €79";cta.href="https://civiclearn.com/portugal/checkout?plan=bundle";extras.forEach(function(e){e.classList.add("visible")})}
+    else{amt.textContent="€49";tag.textContent="Conhecimentos Cívicos";cta.textContent="Começar agora — €49";cta.href="https://civiclearn.com/portugal/checkout";extras.forEach(function(e){e.classList.remove("visible")})}
+  })});
+})();
+</script>
+
+</body>
+</html>
